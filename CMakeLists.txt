@@ -18,7 +18,10 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
         PRIVATE src)
-add_executable(StringHelpersTesting test/main.cpp test/StringHelpersTest.cpp)
+
+ 
+enable_testing()
+add_executable(StringHelpersTesting test/main.cpp)
 target_link_libraries(StringHelpersTesting PRIVATE Catch2::Catch2)
 include(CTest)
 include(Catch)
